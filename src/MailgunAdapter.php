@@ -2,7 +2,7 @@
 /**
  * @copyright Copyright (c) Pixel & Tonic, Inc.
  */
-namespace craftcms\mailgun;
+namespace craft\mailgun;
 
 use Craft;
 use craft\mail\transportadapters\BaseTransportAdapter;

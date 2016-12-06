@@ -30,7 +30,7 @@
   },
   "autoload": {
     "psr-4": {
-      "craftcms\\mailgun\\": "src/"
+      "craft\\mailgun\\": "src/"
     }
   },
   "extra": {
