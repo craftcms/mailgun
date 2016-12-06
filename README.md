@@ -30,7 +30,7 @@ If you installed Craft via [Composer](https://getcomposer.org/), follow these in
 
 If you installed Craft manually, you will need to install this plugin manually as well.
 
-1. Download the [zip](https://github.com/craftcms/mailgun/archive/master.zip), and extract it to your craft/plugins/ folder, renamed to “mailgun” (no “-master”).
+1. [Download the zip](https://github.com/craftcms/mailgun/archive/master.zip), and extract it to your craft/plugins/ folder, renamed to “mailgun” (no “-master”).
 2. Open your terminal and go to your craft/plugins/mailgun/ folder:
 
        cd /path/to/project/craft/plugins/mailgun 
