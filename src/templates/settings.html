@@ -1,0 +1,19 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+	label: "Domain"|t('mailgun'),
+	instructions: "The domain to send email from."|t('mailgun'),
+	id: 'domain',
+	name: 'domain',
+	value: adapter.domain,
+	errors: adapter.getErrors('domain')
+}) }}
+
+{{ forms.textField({
+	label: "API Key"|t('mailgun'),
+	instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
+	id: 'apiKey',
+	name: 'apiKey',
+	value: adapter.apiKey,
+	errors: adapter.getErrors('apiKey')
+}) }}

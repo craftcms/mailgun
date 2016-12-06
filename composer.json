@@ -1,0 +1,39 @@
+{
+  "name": "craftcms/mailgun",
+  "description": "Mailgun Adapter for Craft CMS",
+  "version": "1.0.0-beta.1",
+  "type": "craft-plugin",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "mailgun",
+    "mailer"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel & Tonic",
+      "homepage": "https://pixelandtonic.com/"
+    }
+  ],
+  "support": {
+    "email": "support@craftcms.com",
+    "issues": "https://github.com/craftcms/mailgun/issues?state=open",
+    "source": "https://github.com/craftcms/mailgun",
+    "docs": "https://github.com/craftcms/mailgun",
+    "rss": "https://github.com/craftcms/mailgun/commits/master.atom"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "cspoo/swiftmailer-mailgun-bundle": "^0.3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "craftcms\\mailgun\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Mailgun"
+  }
+}
