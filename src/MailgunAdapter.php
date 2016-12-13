@@ -8,6 +8,7 @@ use Craft;
 use craft\mail\transportadapters\BaseTransportAdapter;
 use cspoo\Swiftmailer\MailgunBundle\Service\MailgunTransport;
 use Mailgun\Mailgun;
+use Swift_Events_SimpleEventDispatcher;
 
 /**
  * MailgunAdapter implements a Mailgun transport adapter into Craft’s mailer.
@@ -84,7 +85,7 @@ class MailgunAdapter extends BaseTransportAdapter
             'class' => MailgunTransport::class,
             'constructArgs' => [
                 [
-                    'class' => \Swift_Events_SimpleEventDispatcher::class
+                    'class' => Swift_Events_SimpleEventDispatcher::class
                 ],
                 [
                     'class' => Mailgun::class,
