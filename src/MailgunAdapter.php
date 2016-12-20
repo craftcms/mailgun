@@ -81,6 +81,9 @@ class MailgunAdapter extends BaseTransportAdapter
      */
     public function getTransportConfig()
     {
+        $guzzleClient = Craft::createGuzzleClient();
+        $client = new Client($guzzleClient);
+
         return [
             'class' => MailgunTransport::class,
             'constructArgs' => [
@@ -91,7 +94,7 @@ class MailgunAdapter extends BaseTransportAdapter
                     'class' => Mailgun::class,
                     'constructArgs' => [
                         $this->apiKey,
-                        //Craft::$app->getHttpClient(),
+                        $client,
                     ]
                 ],
                 $this->domain,
