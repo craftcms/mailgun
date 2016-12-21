@@ -26,7 +26,8 @@
   },
   "minimum-stability": "stable",
   "require": {
-    "cspoo/swiftmailer-mailgun-bundle": "^0.3.1"
+    "cspoo/swiftmailer-mailgun-bundle": "^0.3.1",
+    "php-http/guzzle6-adapter": "^1.1.1"
   },
   "autoload": {
     "psr-4": {
