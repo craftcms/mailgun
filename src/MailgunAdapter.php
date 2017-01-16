@@ -14,6 +14,8 @@ use Swift_Events_SimpleEventDispatcher;
 /**
  * MailgunAdapter implements a Mailgun transport adapter into Craft’s mailer.
  *
+ * @property mixed $settingsHtml
+ *
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @since  3.0
  */
