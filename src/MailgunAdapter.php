@@ -7,6 +7,7 @@ namespace craft\mailgun;
 use Craft;
 use craft\mail\transportadapters\BaseTransportAdapter;
 use cspoo\Swiftmailer\MailgunBundle\Service\MailgunTransport;
+use Http\Adapter\Guzzle6\Client;
 use Mailgun\Mailgun;
 use Swift_Events_SimpleEventDispatcher;
 
