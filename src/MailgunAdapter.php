@@ -25,7 +25,7 @@ class MailgunAdapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public static function displayName()
+    public static function displayName(): string
     {
         return 'Mailgun';
     }
@@ -80,7 +80,7 @@ class MailgunAdapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function getTransportConfig()
+    public function defineTransport()
     {
         $guzzleClient = Craft::createGuzzleClient();
         $client = new Client($guzzleClient);
