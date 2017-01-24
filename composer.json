@@ -35,6 +35,7 @@
     }
   },
   "extra": {
-    "name": "Mailgun"
+    "name": "Mailgun",
+    "handle": "mailgun"
   }
 }
