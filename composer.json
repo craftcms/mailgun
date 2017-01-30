@@ -4,11 +4,11 @@
   "version": "1.0.0-beta.1",
   "type": "craft-plugin",
   "keywords": [
-    "craft",
     "cms",
     "craftcms",
     "mailgun",
-    "mailer"
+    "mailer",
+    "yii2"
   ],
   "license": "MIT",
   "authors": [
@@ -36,6 +36,8 @@
   },
   "extra": {
     "name": "Mailgun",
-    "handle": "mailgun"
+    "handle": "mailgun",
+    "changelogUrl": "https://raw.githubusercontent.com/craftcms/mailgun/master/CHANGELOG.md",
+    "downloadUrl": "https://github.com/craftcms/mailgun/archive/master.zip"
   }
 }
