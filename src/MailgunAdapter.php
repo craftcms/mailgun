@@ -8,6 +8,7 @@ use Craft;
 use craft\mail\transportadapters\BaseTransportAdapter;
 use cspoo\Swiftmailer\MailgunBundle\Service\MailgunTransport;
 use Http\Adapter\Guzzle6\Client;
+use Mailgun\HttpClientConfigurator;
 use Mailgun\Mailgun;
 use Swift_Events_SimpleEventDispatcher;
 
@@ -86,6 +87,9 @@ class MailgunAdapter extends BaseTransportAdapter
     {
         $guzzleClient = Craft::createGuzzleClient();
         $client = new Client($guzzleClient);
+        $httpClientConfigurator = (new HttpClientConfigurator())
+            ->setHttpClient($client)
+            ->setApiKey($this->apiKey);
 
         return [
             'class' => MailgunTransport::class,
@@ -93,13 +97,7 @@ class MailgunAdapter extends BaseTransportAdapter
                 [
                     'class' => Swift_Events_SimpleEventDispatcher::class
                 ],
-                [
-                    'class' => Mailgun::class,
-                    'constructArgs' => [
-                        $this->apiKey,
-                        $client,
-                    ]
-                ],
+                Mailgun::configure($httpClientConfigurator),
                 $this->domain,
             ],
         ];

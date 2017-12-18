@@ -1,6 +1,11 @@
 Changelog
 =========
 
+## Unreleased
+
+### Fixed
+- Fixed a bug where the plugin did not work with Swiftmailer 6.
+
 ## 1.1.0 - 2017-09-28
 
 ### Changed
