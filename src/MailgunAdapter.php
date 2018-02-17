@@ -2,6 +2,7 @@
 /**
  * @copyright Copyright (c) Pixel & Tonic, Inc.
  */
+
 namespace craft\mailgun;
 
 use Craft;
@@ -16,9 +17,8 @@ use Swift_Events_SimpleEventDispatcher;
  * MailgunAdapter implements a Mailgun transport adapter into Craft’s mailer.
  *
  * @property mixed $settingsHtml
- *
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @since  3.0
+ * @since 3.0
  */
 class MailgunAdapter extends BaseTransportAdapter
 {

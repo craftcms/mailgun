@@ -2,6 +2,7 @@
 /**
  * @copyright Copyright (c) Pixel & Tonic, Inc.
  */
+
 namespace craft\mailgun;
 
 use craft\events\RegisterComponentTypesEvent;
@@ -12,7 +13,7 @@ use yii\base\Event;
  * Plugin represents the Mailgun plugin.
  *
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
- * @since  3.0
+ * @since 3.0
  */
 class Plugin extends \craft\base\Plugin
 {
