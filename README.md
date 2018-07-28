@@ -2,25 +2,30 @@
 
 This plugin provides a [Mailgun](http://www.mailgun.com/) integration for [Craft CMS](https://craftcms.com/).
 
-
 ## Requirements
 
 This plugin requires Craft CMS 3.0.0-beta.1 or later.
 
+You can install this plugin from the Plugin Store or with Composer.
 
-## Installation
+#### From the Plugin Store
 
-To install the plugin, follow these instructions.
+Go to the Plugin Store in your project’s Control Panel and search for “Mailgun”. Then click on the “Install” button in its modal window.
 
-1. Open your terminal and go to your Craft project:
+#### With Composer
 
-        cd /path/to/project
+Open your terminal and run the following commands:
 
-2. Then tell Composer to load the plugin:
+```bash
+# go to the project directory
+cd /path/to/my-project.test
 
-        composer require craftcms/mailgun
+# tell Composer to load the plugin
+composer require craftcms/mailgun
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Mailgun.
+# tell Craft to install the plugin
+./craft install/plugin mailgun
+```
 
 ## Setup
 
