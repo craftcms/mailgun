@@ -1,5 +1,4 @@
-Mailgun for Craft CMS
-=====================
+# Mailgun for Craft CMS
 
 This plugin provides a [Mailgun](http://www.mailgun.com/) integration for [Craft CMS](https://craftcms.com/).
 

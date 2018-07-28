@@ -1,5 +1,4 @@
-Changelog
-=========
+# Release Notes for Mailgun for Craft CMS
 
 ## 1.2.0 - 2017-12-18
 
