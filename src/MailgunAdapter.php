@@ -46,6 +46,11 @@ class MailgunAdapter extends BaseTransportAdapter
      */
     public $apiKey;
 
+    /**
+     * @var string The API key that should be used
+     */
+    public $apiBaseUrl;
+
     // Public Methods
     // =========================================================================
 
@@ -57,6 +62,7 @@ class MailgunAdapter extends BaseTransportAdapter
         return [
             'apiKey' => Craft::t('mailgun', 'API Key'),
             'domain' => Craft::t('mailgun', 'Domain'),
+            'apiBaseUrl' => Craft::t('mailgun', 'API Base Url'),
         ];
     }
 
@@ -66,7 +72,7 @@ class MailgunAdapter extends BaseTransportAdapter
     public function rules()
     {
         return [
-            [['apiKey', 'domain'], 'required'],
+            [['apiKey', 'domain', 'apiBaseUrl'], 'required'],
         ];
     }
 
@@ -88,6 +94,7 @@ class MailgunAdapter extends BaseTransportAdapter
         $guzzleClient = Craft::createGuzzleClient();
         $client = new Client($guzzleClient);
         $httpClientConfigurator = (new HttpClientConfigurator())
+            ->setEndpoint($this->apiBaseUrl)
             ->setHttpClient($client)
             ->setApiKey($this->apiKey);
 

@@ -17,3 +17,12 @@
     value: adapter.apiKey,
     errors: adapter.getErrors('apiKey')
 }) }}
+
+{{ forms.textField({
+    label: "API Base URL"|t('mailgun'),
+    instructions: "Include your domain with the url (ex: https://api.eu.mailgun.net/v3/mydomain). You can find this in your Mailgun settings for the chosen domain. The API url depends of the choosen region in Mailgun"|t('mailgun'),
+    id: 'apiBaseUrl',
+    name: 'apiBaseUrl',
+    value: adapter.apiBaseUrl,
+    errors: adapter.getErrors('apiBaseUrl')
+}) }}

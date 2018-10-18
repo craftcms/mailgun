@@ -1,5 +1,5 @@
 {
-  "name": "craftcms/mailgun",
+  "name": "justdoweb-be/mailgun",
   "description": "Mailgun integration for Craft CMS",
   "version": "1.2.0",
   "type": "craft-plugin",
