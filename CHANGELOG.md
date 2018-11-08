@@ -1,6 +1,6 @@
 # Release Notes for Mailgun for Craft CMS
 
-## Unreleased
+## 1.3.0 - 2018-11-08
 
 ### Added
 - Added an “Endpoint” setting, making it possible to use regional Mailgun API endpoint URLs. ([#4](https://github.com/craftcms/mailgun/pull/4))
