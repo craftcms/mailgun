@@ -1,6 +1,7 @@
 {% import "_includes/forms" as forms %}
 
 {{ forms.textField({
+    required: true,
     label: "Domain"|t('mailgun'),
     instructions: "The domain to send email from."|t('mailgun'),
     id: 'domain',
@@ -10,10 +11,21 @@
 }) }}
 
 {{ forms.textField({
+    required: true,
     label: "API Key"|t('mailgun'),
     instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
     id: 'apiKey',
     name: 'apiKey',
     value: adapter.apiKey,
     errors: adapter.getErrors('apiKey')
+}) }}
+
+{{ forms.textField({
+    label: "Endpoint"|t('mailgun'),
+    instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
+    id: 'endpoint',
+    name: 'endpoint',
+    placeholder: 'https://api.mailgun.net',
+    value: adapter.endpoint,
+    errors: adapter.getErrors('endpoint')
 }) }}
