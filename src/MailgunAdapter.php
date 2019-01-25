@@ -96,10 +96,10 @@ class MailgunAdapter extends BaseTransportAdapter
         $client = new Client($guzzleClient);
         $httpClientConfigurator = (new HttpClientConfigurator())
             ->setHttpClient($client)
-            ->setApiKey($this->apiKey);
+            ->setApiKey(Craft::parseEnv($this->apiKey));
 
         if ($this->endpoint) {
-            $httpClientConfigurator->setEndpoint($this->endpoint);
+            $httpClientConfigurator->setEndpoint(Craft::parseEnv($this->endpoint));
         }
 
         return [
@@ -109,7 +109,7 @@ class MailgunAdapter extends BaseTransportAdapter
                     'class' => Swift_Events_SimpleEventDispatcher::class
                 ],
                 Mailgun::configure($httpClientConfigurator),
-                $this->domain,
+                Craft::parseEnv($this->domain),
             ],
         ];
     }
