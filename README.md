@@ -4,7 +4,7 @@ This plugin provides a [Mailgun](http://www.mailgun.com/) integration for [Craft
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0-beta.1 or later.
+This plugin requires Craft CMS 3.1.5 or later.
 
 You can install this plugin from the Plugin Store or with Composer.
 
@@ -30,3 +30,7 @@ composer require craftcms/mailgun
 ## Setup
 
 Once Mailgun is installed, go to Settings → Email, and change the “Transport Type” setting to “Mailgun”. Enter your domain name and Mailgun API Key (which you can get from your [domain overview](https://mailgun.com/app/domains) page) and click Save.
+
+::: tip
+The Domain, API Key, and Endpoint settings can be set to environment variables. See [Environmental Configuration](https://docs.craftcms.com/v3/config/environments.html) in the Craft docs to learn more about that.
+:::
