@@ -1,9 +1,10 @@
 # Release Notes for Mailgun for Craft CMS
 
-## Unreleased
+## 1.4.0 - 2019-02-04
 
 ### Added
-- Domain, API Key, and Endpoint settings can now be set to environment variables. ([#5](https://github.com/craftcms/mailgun/issues/5)) 
+- Mailgun now requires Craft 3.1.5 or later.
+- The Domain, API Key, and Endpoint settings can now be set to environment variables. ([#5](https://github.com/craftcms/mailgun/issues/5))
 
 ## 1.3.0 - 2018-11-08
 
