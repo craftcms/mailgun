@@ -6,7 +6,7 @@
     instructions: "The domain to send email from."|t('mailgun'),
     id: 'domain',
     name: 'domain',
-    suggestions: craft.cp.getEnvSuggestions(),
+    suggestEnvVars: true,
     value: adapter.domain,
     errors: adapter.getErrors('domain')
 }) }}
@@ -17,7 +17,7 @@
     instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
     id: 'apiKey',
     name: 'apiKey',
-    suggestions: craft.cp.getEnvSuggestions(),
+    suggestEnvVars: true,
     value: adapter.apiKey,
     errors: adapter.getErrors('apiKey')
 }) }}
@@ -27,7 +27,7 @@
     instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
     id: 'endpoint',
     name: 'endpoint',
-    suggestions: craft.cp.getEnvSuggestions(),
+    suggestEnvVars: true,
     placeholder: 'https://api.mailgun.net',
     value: adapter.endpoint,
     errors: adapter.getErrors('endpoint')
