@@ -31,24 +31,6 @@ composer require craftcms/mailgun
 
 Once Mailgun is installed, go to Settings → Email, and change the “Transport Type” setting to “Mailgun”. Enter your domain name and Mailgun API Key (which you can get from your [domain overview](https://mailgun.com/app/domains) page) and click Save.
 
-### Per-Environment Configuration
-
-Once you’ve selected Mailgun as mail transport type in the Control Panel, you can override its settings with different values for each environment.
-Mailgun’s Domain, API Key, and Endpoint settings can be set to environment variables.
-
-First, add the following environment variables to your `.env` and `.env.example` files:
-
-```bash
-# Mailgun's Domain
-MAILGUN_DOMAIN=""
-# The Mailgun API key
-MAILGUN_API_KEY=""
-# The Mailgun endpoint
-MAILGUN_ENDPOINT=""
-``` 
-
-Fill in the values in your `.env` file (leaving the values in `.env.example` blank).
-
-Then when you use Mailgun as mail transport type, you can reference these environment variables in the email settings by typing `$` followed by the environment variable names.
-
-Only the environment variable names will be saved to your database and `project.yaml` file, not their values.
+::: tip
+The Domain, API Key, and Endpoint settings can be set to environment variables. See [Environmental Configuration](https://docs.craftcms.com/v3/config/environments.html) in the Craft docs to learn more about that.
+:::
