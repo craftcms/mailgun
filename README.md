@@ -1,4 +1,6 @@
-# Mailgun for Craft CMS
+<p align="center"><img src="./src/icon.svg" width="100" height="100" alt="Mailgun for Craft CMS icon"></p>
+
+<h1 align="center">Mailgun for Craft CMS</h1>
 
 This plugin provides a [Mailgun](http://www.mailgun.com/) integration for [Craft CMS](https://craftcms.com/).
 
