@@ -1,5 +1,10 @@
 # Release Notes for Mailgun for Craft CMS
 
+## 1.4.1 - 2019-02-13
+
+### Fixed
+- Fixed a validation error that would occur when the Endpoint setting was set to an environment variable. ([#7](https://github.com/craftcms/mailgun/issues/7))
+
 ## 1.4.0 - 2019-02-04
 
 ### Added

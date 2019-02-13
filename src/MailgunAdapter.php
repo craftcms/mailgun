@@ -6,6 +6,7 @@
 namespace craft\mailgun;
 
 use Craft;
+use craft\behaviors\EnvAttributeParserBehavior;
 use craft\mail\transportadapters\BaseTransportAdapter;
 use cspoo\Swiftmailer\MailgunBundle\Service\MailgunTransport;
 use Http\Adapter\Guzzle6\Client;
@@ -53,6 +54,23 @@ class MailgunAdapter extends BaseTransportAdapter
 
     // Public Methods
     // =========================================================================
+
+    /**
+     * @inheritdoc
+     */
+    public function behaviors()
+    {
+        return [
+            'parser' => [
+                'class' => EnvAttributeParserBehavior::class,
+                'attributes' => [
+                    'apiKey',
+                    'endpoint',
+                    'domain',
+                ],
+            ],
+        ];
+    }
 
     /**
      * @inheritdoc
