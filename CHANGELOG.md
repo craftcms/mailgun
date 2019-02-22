@@ -1,5 +1,10 @@
 # Release Notes for Mailgun for Craft CMS
 
+## 1.4.2 - 2019-02-22
+
+### Fixed
+- Fixed a bug where `craft\mailgun\MailgunAdapter` wasn’t triggering the `defineBehaviors` event.
+
 ## 1.4.1 - 2019-02-13
 
 ### Fixed

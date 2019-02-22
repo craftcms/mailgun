@@ -60,16 +60,16 @@ class MailgunAdapter extends BaseTransportAdapter
      */
     public function behaviors()
     {
-        return [
-            'parser' => [
-                'class' => EnvAttributeParserBehavior::class,
-                'attributes' => [
-                    'apiKey',
-                    'endpoint',
-                    'domain',
-                ],
+        $behaviors = parent::behaviors();
+        $behaviors['parser'] = [
+            'class' => EnvAttributeParserBehavior::class,
+            'attributes' => [
+                'apiKey',
+                'endpoint',
+                'domain',
             ],
         ];
+        return $behaviors;
     }
 
     /**
