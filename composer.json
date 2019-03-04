@@ -21,7 +21,7 @@
     "email": "support@craftcms.com",
     "issues": "https://github.com/craftcms/mailgun/issues?state=open",
     "source": "https://github.com/craftcms/mailgun",
-    "docs": "https://github.com/craftcms/mailgun",
+    "docs": "https://github.com/craftcms/mailgun/blob/v1/README.md",
     "rss": "https://github.com/craftcms/mailgun/commits/master.atom"
   },
   "require": {
@@ -37,7 +37,6 @@
   "extra": {
     "name": "Mailgun",
     "handle": "mailgun",
-    "changelogUrl": "https://raw.githubusercontent.com/craftcms/mailgun/master/CHANGELOG.md",
-    "downloadUrl": "https://github.com/craftcms/mailgun/archive/master.zip"
+    "documentationUrl": "https://github.com/craftcms/mailgun/blob/v1/README.md"
   }
 }
