@@ -1,5 +1,10 @@
 # Release Notes for Mailgun for Craft CMS
 
+## 1.4.3 - 2020-03-20
+
+### Fixed
+- Loosened dependency restrictions to prevent conflicts with (future) Craft installations
+
 ## 1.4.2 - 2019-02-22
 
 ### Fixed
