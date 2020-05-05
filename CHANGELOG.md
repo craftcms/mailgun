@@ -3,7 +3,7 @@
 ## 1.4.3 - 2020-03-20
 
 ### Fixed
-- Loosened dependency restrictions to prevent conflicts with (future) Craft installations
+- Allow 2.x versions for Guzzle adapter.
 
 ## 1.4.2 - 2019-02-22
 
