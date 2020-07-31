@@ -3,4 +3,3 @@
 *.DS_Store
 *Thumbs.db
 /vendor
-/composer.lock
