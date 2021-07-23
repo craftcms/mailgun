@@ -23,9 +23,6 @@ use Swift_Events_SimpleEventDispatcher;
  */
 class MailgunAdapter extends BaseTransportAdapter
 {
-    // Static
-    // =========================================================================
-
     /**
      * @inheritdoc
      */
@@ -33,9 +30,6 @@ class MailgunAdapter extends BaseTransportAdapter
     {
         return 'Mailgun';
     }
-
-    // Properties
-    // =========================================================================
 
     /**
      * @var string The domain
@@ -51,9 +45,6 @@ class MailgunAdapter extends BaseTransportAdapter
      * @var string The API endpoint that should be used
      */
     public $endpoint;
-
-    // Public Methods
-    // =========================================================================
 
     /**
      * @inheritdoc

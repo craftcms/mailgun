@@ -1,34 +1,34 @@
 {% import "_includes/forms" as forms %}
 
 {{ forms.autosuggestField({
-    required: true,
-    label: "Domain"|t('mailgun'),
-    instructions: "The domain to send email from."|t('mailgun'),
-    id: 'domain',
-    name: 'domain',
-    suggestEnvVars: true,
-    value: adapter.domain,
-    errors: adapter.getErrors('domain')
+  required: true,
+  label: "Domain"|t('mailgun'),
+  instructions: "The domain to send email from."|t('mailgun'),
+  id: 'domain',
+  name: 'domain',
+  suggestEnvVars: true,
+  value: adapter.domain,
+  errors: adapter.getErrors('domain')
 }) }}
 
 {{ forms.autosuggestField({
-    required: true,
-    label: "API Key"|t('mailgun'),
-    instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
-    id: 'apiKey',
-    name: 'apiKey',
-    suggestEnvVars: true,
-    value: adapter.apiKey,
-    errors: adapter.getErrors('apiKey')
+  required: true,
+  label: "API Key"|t('mailgun'),
+  instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
+  id: 'apiKey',
+  name: 'apiKey',
+  suggestEnvVars: true,
+  value: adapter.apiKey,
+  errors: adapter.getErrors('apiKey')
 }) }}
 
 {{ forms.autosuggestField({
-    label: "Endpoint"|t('mailgun'),
-    instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
-    id: 'endpoint',
-    name: 'endpoint',
-    suggestEnvVars: true,
-    placeholder: 'https://api.mailgun.net',
-    value: adapter.endpoint,
-    errors: adapter.getErrors('endpoint')
+  label: "Endpoint"|t('mailgun'),
+  instructions: "You can find this in your Mailgun settings for the chosen domain."|t('mailgun'),
+  id: 'endpoint',
+  name: 'endpoint',
+  suggestEnvVars: true,
+  placeholder: 'https://api.mailgun.net',
+  value: adapter.endpoint,
+  errors: adapter.getErrors('endpoint')
 }) }}
