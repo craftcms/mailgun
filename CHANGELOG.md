@@ -1,5 +1,10 @@
 # Release Notes for Mailgun for Craft CMS
 
+## Unreleased
+
+### Changed
+- Swiftmailer Mailgun bundle compability  
+
 ## 1.4.3 - 2020-03-20
 
 ### Fixed
