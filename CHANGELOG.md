@@ -1,5 +1,12 @@
 # Release Notes for Mailgun for Craft CMS
 
+## 2.0.0 - 2021-09-14
+
+### Changed
+- Mailgun for Craft CMS now requires Craft 3.6 or later.
+- Mailgun for Craft CMS now requires PHP 7.3 or later.
+- Mailgun for Craft CMS now requires Guzzle 7.
+
 ## 1.4.3 - 2020-03-20
 
 ### Fixed

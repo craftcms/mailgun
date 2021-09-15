@@ -9,8 +9,7 @@ use Craft;
 use craft\behaviors\EnvAttributeParserBehavior;
 use craft\mail\transportadapters\BaseTransportAdapter;
 use cspoo\Swiftmailer\MailgunBundle\Service\MailgunTransport;
-use Http\Adapter\Guzzle6\Client;
-use Mailgun\HttpClientConfigurator;
+use Mailgun\HttpClient\HttpClientConfigurator;
 use Mailgun\Mailgun;
 use Swift_Events_SimpleEventDispatcher;
 
@@ -101,25 +100,18 @@ class MailgunAdapter extends BaseTransportAdapter
      */
     public function defineTransport()
     {
-        $guzzleClient = Craft::createGuzzleClient();
-        $client = new Client($guzzleClient);
-        $httpClientConfigurator = (new HttpClientConfigurator())
-            ->setHttpClient($client)
+        $configurator = (new HttpClientConfigurator())
+            ->setHttpClient(Craft::createGuzzleClient() )
             ->setApiKey(Craft::parseEnv($this->apiKey));
 
         if ($this->endpoint) {
-            $httpClientConfigurator->setEndpoint(Craft::parseEnv($this->endpoint));
+            $configurator->setEndpoint(Craft::parseEnv($this->endpoint));
         }
 
-        return [
-            'class' => MailgunTransport::class,
-            'constructArgs' => [
-                [
-                    'class' => Swift_Events_SimpleEventDispatcher::class
-                ],
-                Mailgun::configure($httpClientConfigurator),
-                Craft::parseEnv($this->domain),
-            ],
-        ];
+        return new MailgunTransport(
+            new Swift_Events_SimpleEventDispatcher(),
+            new Mailgun($configurator),
+            Craft::parseEnv($this->domain)
+        );
     }
 }

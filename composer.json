@@ -25,9 +25,10 @@
     "rss": "https://github.com/craftcms/mailgun/commits/master.atom"
   },
   "require": {
-    "craftcms/cms": "^3.1.5",
-    "cspoo/swiftmailer-mailgun-bundle": "^1.0.0",
-    "php-http/guzzle6-adapter": "^1.1.1 || ^2.0"
+    "craftcms/cms": "^3.6",
+    "cspoo/swiftmailer-mailgun-bundle": "^2.0",
+    "php-http/guzzle7-adapter": "^1.0",
+    "guzzlehttp/psr7": "^2.0"
   },
   "autoload": {
     "psr-4": {
