@@ -6,7 +6,7 @@ This plugin provides a [Mailgun](http://www.mailgun.com/) integration for [Craft
 
 ## Requirements
 
-This plugin requires Craft CMS 3.1.5 or later.
+This plugin requires Craft CMS 3.7.20 or later.
 
 You can install this plugin from the Plugin Store or with Composer.
 
