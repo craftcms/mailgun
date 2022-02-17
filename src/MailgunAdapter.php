@@ -7,11 +7,9 @@ namespace craft\mailgun;
 
 use Craft;
 use craft\behaviors\EnvAttributeParserBehavior;
+use craft\helpers\App;
 use craft\mail\transportadapters\BaseTransportAdapter;
-use cspoo\Swiftmailer\MailgunBundle\Service\MailgunTransport;
-use Mailgun\HttpClient\HttpClientConfigurator;
-use Mailgun\Mailgun;
-use Swift_Events_SimpleEventDispatcher;
+use Symfony\Component\Mailer\Bridge\Mailgun\Transport\MailgunApiTransport;
 
 /**
  * MailgunAdapter implements a Mailgun transport adapter into Craft’s mailer.
@@ -33,22 +31,22 @@ class MailgunAdapter extends BaseTransportAdapter
     /**
      * @var string The domain
      */
-    public $domain;
+    public string $domain = '';
 
     /**
      * @var string The API key that should be used
      */
-    public $apiKey;
+    public string $apiKey = '';
 
     /**
      * @var string The API endpoint that should be used
      */
-    public $endpoint;
+    public string $endpoint = '';
 
     /**
      * @inheritdoc
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         $behaviors = parent::behaviors();
         $behaviors['parser'] = [
@@ -77,7 +75,7 @@ class MailgunAdapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function rules()
+    public function defineRules(): array
     {
         return [
             [['apiKey', 'domain'], 'required'],
@@ -88,7 +86,7 @@ class MailgunAdapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function getSettingsHtml()
+    public function getSettingsHtml(): ?string
     {
         return Craft::$app->getView()->renderTemplate('mailgun/settings', [
             'adapter' => $this
@@ -100,18 +98,9 @@ class MailgunAdapter extends BaseTransportAdapter
      */
     public function defineTransport()
     {
-        $configurator = (new HttpClientConfigurator())
-            ->setHttpClient(Craft::createGuzzleClient() )
-            ->setApiKey(Craft::parseEnv($this->apiKey));
+        $region = preg_match('/api\.eu\.mailgun/i', App::parseEnv($this->endpoint)) ? 'eu' : 'us';
+        $transport = new MailgunApiTransport(App::parseEnv($this->apiKey), App::parseEnv($this->domain), $region);
 
-        if ($this->endpoint) {
-            $configurator->setEndpoint(Craft::parseEnv($this->endpoint));
-        }
-
-        return new MailgunTransport(
-            new Swift_Events_SimpleEventDispatcher(),
-            new Mailgun($configurator),
-            Craft::parseEnv($this->domain)
-        );
+        return $transport;
     }
 }
