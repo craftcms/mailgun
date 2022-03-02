@@ -96,7 +96,7 @@ class MailgunAdapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function defineTransport()
+    public function defineTransport(): array|\Symfony\Component\Mailer\Transport\AbstractTransport
     {
         $region = preg_match('/api\.eu\.mailgun/i', App::parseEnv($this->endpoint)) ? 'eu' : 'us';
         $transport = new MailgunApiTransport(App::parseEnv($this->apiKey), App::parseEnv($this->domain), $region);
