@@ -24,11 +24,16 @@
     "docs": "https://github.com/craftcms/mailgun/blob/v1/README.md",
     "rss": "https://github.com/craftcms/mailgun/commits/master.atom"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "craftcms/cms": "^3.7.20",
     "cspoo/swiftmailer-mailgun-bundle": "^2.0",
     "php-http/guzzle7-adapter": "^1.0",
     "guzzlehttp/psr7": "^2.0"
+  },
+  "require-dev": {
+    "craftcms/phpstan": "dev-main"
   },
   "autoload": {
     "psr-4": {
@@ -39,5 +44,14 @@
     "name": "Mailgun",
     "handle": "mailgun",
     "documentationUrl": "https://github.com/craftcms/mailgun/blob/v1/README.md"
+  },
+  "scripts": {
+    "phpstan": "phpstan --memory-limit=1G"
+  },
+  "config": {
+    "allow-plugins": {
+      "yiisoft/yii2-composer": true,
+      "craftcms/plugin-installer": true
+    }
   }
 }
