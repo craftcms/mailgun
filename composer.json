@@ -1,7 +1,6 @@
 {
   "name": "craftcms/mailgun",
   "description": "Mailgun integration for Craft CMS",
-  "version": "3.0.0",
   "type": "craft-plugin",
   "keywords": [
     "cms",
