@@ -91,7 +91,7 @@ class MailgunAdapter extends BaseTransportAdapter
     public function getSettingsHtml()
     {
         return Craft::$app->getView()->renderTemplate('mailgun/settings', [
-            'adapter' => $this
+            'adapter' => $this,
         ]);
     }
 
@@ -101,7 +101,7 @@ class MailgunAdapter extends BaseTransportAdapter
     public function defineTransport()
     {
         $configurator = (new HttpClientConfigurator())
-            ->setHttpClient(Craft::createGuzzleClient() )
+            ->setHttpClient(Craft::createGuzzleClient())
             ->setApiKey(Craft::parseEnv($this->apiKey));
 
         if ($this->endpoint) {
