@@ -89,7 +89,7 @@ class MailgunAdapter extends BaseTransportAdapter
     public function getSettingsHtml(): ?string
     {
         return Craft::$app->getView()->renderTemplate('mailgun/settings', [
-            'adapter' => $this
+            'adapter' => $this,
         ]);
     }
 

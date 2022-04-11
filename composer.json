@@ -31,6 +31,7 @@
     "symfony/mailgun-mailer": "^6.0.3"
   },
   "require-dev": {
+    "craftcms/ecs": "dev-main",
     "craftcms/phpstan": "dev-main",
     "craftcms/rector": "dev-main"
   },
@@ -45,6 +46,8 @@
     "documentationUrl": "https://github.com/craftcms/mailgun/blob/v1/README.md"
   },
   "scripts": {
+    "check-cs": "ecs check --ansi",
+    "fix-cs": "ecs check --ansi --fix",
     "phpstan": "phpstan --memory-limit=1G"
   },
   "config": {
