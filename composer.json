@@ -52,7 +52,7 @@
   },
   "config": {
     "platform": {
-      "php": "7.3.0"
+      "php": "8.0.2"
     },
     "allow-plugins": {
       "yiisoft/yii2-composer": true,
