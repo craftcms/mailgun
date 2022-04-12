@@ -1,5 +1,10 @@
 # Release Notes for Mailgun for Craft CMS
 
+## 2.0.1 - 2022-04-12
+
+### Fixed
+- Fixed a bug where the plugin wasn’t explicitly requiring PHP 7.3 or later.
+
 ## 2.0.0 - 2021-11-06
 
 ### Changed
