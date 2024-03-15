@@ -24,9 +24,14 @@ class Plugin extends \craft\base\Plugin
     {
         parent::init();
 
+        $eventName = defined(sprintf('%s::EVENT_REGISTER_MAILER_TRANSPORT_TYPES', MailerHelper::class))
+            ? MailerHelper::EVENT_REGISTER_MAILER_TRANSPORTS // Craft 4
+            /** @phpstan-ignore-next-line */
+            : MailerHelper::EVENT_REGISTER_MAILER_TRANSPORTS; // Craft 5+
+
         Event::on(
             MailerHelper::class,
-            MailerHelper::EVENT_REGISTER_MAILER_TRANSPORT_TYPES,
+            $eventName,
             function(RegisterComponentTypesEvent $event) {
                 $event->types[] = MailgunAdapter::class;
             }

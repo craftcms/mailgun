@@ -27,8 +27,8 @@
   "prefer-stable": true,
   "require": {
     "php": "^8.0.2",
-    "craftcms/cms": "^4.0.0-alpha.1",
-    "symfony/mailgun-mailer": "^6.0.3"
+    "craftcms/cms": "^4.0.0-alpha.1|^5.0.0-beta.1",
+    "symfony/mailgun-mailer": "^6.0.3|7.0.4"
   },
   "require-dev": {
     "craftcms/ecs": "dev-main",
