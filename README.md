@@ -26,7 +26,7 @@ cd /path/to/my-project.test
 composer require craftcms/mailgun
 
 # tell Craft to install the plugin
-./craft install/plugin mailgun
+./craft plugin/install mailgun
 ```
 
 ## Setup
