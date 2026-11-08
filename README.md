@@ -6,7 +6,7 @@ This plugin provides a [Mailgun](http://www.mailgun.com/) integration for [Craft
 
 ## Requirements
 
-This plugin requires Craft CMS 4.0.0+ or 5.0.0+.
+This plugin requires Craft CMS 4.0.0+ or 5.0.0+, or 6.0.0-alpha.1+ with the `craftcms/yii2-adapter` package.
 
 You can install this plugin from the Plugin Store or with Composer.
 
@@ -34,3 +34,54 @@ composer require craftcms/mailgun
 Once Mailgun is installed, go to Settings → Email, and change the “Transport Type” setting to “Mailgun”. Enter your domain name and Mailgun API Key (which you can get from your [domain overview](https://app.mailgun.com/mg/sending/domains) page) and click Save.
 
 > **Tip:** The Domain, API Key, and Endpoint settings can be set to environment variables. See [Environmental Configuration](https://docs.craftcms.com/v3/config/environments.html) in the Craft docs to learn more about that.
+
+## Craft 6
+
+Craft 6 sends email through [Laravel mailers](https://laravel.com/docs/mail). Laravel has its own Mailgun driver, so you don’t need this plugin once you’ve configured it.
+
+With the `craftcms/yii2-adapter` package installed, Craft keeps sending email through the Mailgun settings in your project config until you configure a Laravel mailer. It uses them as the `craft-transport` mailer, which is the default mailer unless you select a mailer in Settings → Email, set the `MAIL_MAILER` environment variable, or change the default mailer in `config/mail.php`. Craft logs a deprecation warning while it does this.
+
+To configure Laravel’s Mailgun driver:
+
+1. Require Symfony’s Mailgun transport and HTTP client. Removing this plugin removes them too, otherwise.
+
+   ```bash
+   composer require symfony/mailgun-mailer symfony/http-client
+   ```
+
+2. Add a `mailgun` mailer to the `mailers` array in `config/mail.php`:
+
+   ```php
+   'mailgun' => [
+       'transport' => 'mailgun',
+   ],
+   ```
+
+3. Add your Mailgun credentials to `config/services.php`:
+
+   ```php
+   'mailgun' => [
+       'domain' => env('MAILGUN_DOMAIN'),
+       'secret' => env('MAILGUN_SECRET'),
+       'endpoint' => env('MAILGUN_ENDPOINT', 'api.mailgun.net'),
+       'scheme' => 'https',
+   ],
+   ```
+
+4. Set the environment variables in `.env`. `MAILGUN_SECRET` is the API key. `MAILGUN_ENDPOINT` is a hostname without `https://`, such as `api.eu.mailgun.net` for Mailgun’s EU region.
+
+   ```bash
+   MAIL_MAILER=mailgun
+   MAILGUN_DOMAIN=mg.example.com
+   MAILGUN_SECRET=your-api-key
+   MAILGUN_ENDPOINT=api.mailgun.net
+   ```
+
+5. Send a test email from Settings → Email, or with `php artisan craft:mailer:test`.
+
+Then uninstall the plugin and remove it from your project:
+
+```bash
+php artisan craft:plugin:uninstall mailgun
+composer remove craftcms/mailgun
+```

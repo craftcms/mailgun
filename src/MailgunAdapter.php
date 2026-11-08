@@ -63,7 +63,7 @@ class MailgunAdapter extends BaseTransportAdapter
     /**
      * @inheritdoc
      */
-    public function attributeLabels()
+    public function attributeLabels(): array
     {
         return [
             'apiKey' => Craft::t('mailgun', 'API Key'),
