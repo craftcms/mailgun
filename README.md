@@ -39,7 +39,7 @@ Once Mailgun is installed, go to Settings → Email, and change the “Transport
 
 Craft 6 sends email through [Laravel mailers](https://laravel.com/docs/mail). Laravel has its own Mailgun driver, so you don’t need this plugin once you’ve configured it.
 
-With the `craftcms/yii2-adapter` package installed, Craft keeps sending email through the Mailgun settings in your project config until you configure a Laravel mailer. It uses them as the `craft-transport` mailer, which is the default mailer unless you select a mailer in Settings → Email, set the `MAIL_MAILER` environment variable, or change the default mailer in `config/mail.php`. Craft logs a deprecation warning while it does this.
+With the `craftcms/yii2-adapter` package installed, Craft can keep sending email through the Mailgun settings in your project config, as the `craft-transport` mailer. To use it, set `MAIL_MAILER=craft-transport` in your environment, or choose `craft-transport` as the mailer in Settings → Email. (Craft only falls back to it on its own when neither is set and the default mailer in `config/mail.php` is still `log`.) The Yii2 Loose Ends utility lists the Mailgun settings until you configure a Laravel mailer.
 
 To configure Laravel’s Mailgun driver:
 
