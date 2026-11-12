@@ -1,5 +1,11 @@
 # Release Notes for Mailgun for Craft CMS
 
+## 3.2.0 - 2026-11-12
+
+- Added Craft 6 compatibility, when the `craftcms/yii2-adapter` package is installed. Set `MAIL_MAILER=craft-transport`, or choose the `craft-transport` mailer in Settings → Email, to keep sending email through the Mailgun settings in the project config. ([Craft 6 instructions](https://github.com/craftcms/mailgun/blob/3.x/README.md#craft-6))
+- Added support for `symfony/mailgun-mailer` versions after 7.0.4, including 8.x.
+- Mailgun now requires `symfony/http-client`.
+
 ## 3.1.0 - 2024-03-19
 
 - Added Craft 5 compatibility.
